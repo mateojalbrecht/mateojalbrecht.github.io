@@ -1,0 +1,262 @@
+[
+  {
+    "slug": "mil-std-1750a-processor",
+    "title": "A processor, from RTL up.",
+    "name": "MIL-STD-1750A Processor",
+    "category": "Digital design",
+    "kind": "Senior capstone",
+    "period": "August 2026 – May 2027",
+    "status": "In progress",
+    "image": "capstone-pipeline.png",
+    "alt": "Team processor pipeline diagram with instruction fetch, decode, execute, memory, and writeback stages",
+    "tags": [
+      "Verilog",
+      "RTL verification",
+      "SKY130"
+    ],
+    "summary": "Developing a 16-bit processor in a three-person team, with a five-stage pipeline and a path toward SKY130 ASIC implementation.",
+    "role": "Instruction and data memory RTL, verification, and processor integration",
+    "tools": "Verilog, Yosys, OpenROAD, OpenSTA, SKY130",
+    "intro": "A senior capstone exploring the full digital design process: from synthesizable RTL and verification to synthesis, timing analysis, and physical implementation. The team is developing a MIL-STD-1750A-compatible processor; implementation and verification are ongoing.",
+    "sections": [
+      {
+        "title": "The engineering challenge",
+        "text": "Build a synthesizable 16-bit processor with a five-stage pipeline, while aligning instruction and data memory behavior with the datapath and control interfaces. The project targets SKY130 ASIC implementation."
+      },
+      {
+        "title": "My contribution",
+        "bullets": [
+          "Designing and verifying the 16-bit instruction and data memory RTL.",
+          "Creating testbenches for instruction fetch, memory reads, and clocked writes.",
+          "Integrating memory interfaces with the processor datapath and control logic in a three-member team."
+        ]
+      },
+      {
+        "title": "Implementation workflow",
+        "text": "Applying Yosys for logic synthesis, OpenSTA for static timing analysis, and OpenROAD for physical implementation. The work includes area evaluation and development of an RTL-to-GDSII flow."
+      },
+      {
+        "title": "ALU implementation",
+        "text": "The team status presentation documents my ALU implementation in Verilog, supporting arithmetic, logical, and shift operations. The module went through SKY130HD synthesis, placement, clock-tree synthesis, and global routing. Timing optimization remains in progress.",
+        "image": "capstone-alu-openroad.png",
+        "alt": "OpenROAD screenshot showing ALU placement density and a setup-slack histogram",
+        "imageCaption": "ALU placement-density view and timing distribution from the team status presentation (slide 9)."
+      },
+      {
+        "title": "Data memory interface",
+        "text": "The data memory subsystem uses clocked writes and combinational reads. This module diagram shows its address, data, clock, and read/write control interfaces.",
+        "image": "capstone-data-memory.png",
+        "alt": "Data memory block diagram showing MemRead, MemWrite, address, write data, clock, and read data",
+        "imageCaption": "Data memory module diagram from the team status presentation (slide 11)."
+      },
+      {
+        "title": "Current status",
+        "text": "Currently designing and verifying memory RTL, integrating processor interfaces, and developing the implementation flow. The capstone is scheduled to conclude in May 2027."
+      }
+    ],
+    "caption": "Processor pipeline diagram from the team’s capstone status presentation (slide 3).",
+    "imageFit": "contain"
+  },
+  {
+    "slug": "smart-light-controller",
+    "title": "Physical control. Connected software.",
+    "name": "IoT Smart Light Controller",
+    "category": "Embedded systems",
+    "kind": "Personal project",
+    "period": "Embedded + mobile",
+    "status": "Project",
+    "image": "smart-light.svg",
+    "alt": "System diagram connecting iOS, Firebase, an ESP32, and a servo actuator",
+    "tags": [
+      "ESP32 / C++",
+      "Firebase",
+      "Swift"
+    ],
+    "summary": "An ESP32-based motorized lighting system that connects embedded control, cloud synchronization, and iOS automation.",
+    "role": "Embedded firmware, cloud integration, iOS automation, and mechanical design",
+    "tools": "ESP32, C++, Firebase, REST APIs, Swift, CAD",
+    "intro": "An end-to-end hardware and software project for remotely operating a motorized lighting system. It brings together embedded control logic, cloud state synchronization, mobile automation, and a custom physical mount.",
+    "sections": [
+      {
+        "title": "The engineering challenge",
+        "text": "Connect a physical actuator to a remote interface while coordinating the embedded device, cloud data flow, and mobile automation."
+      },
+      {
+        "title": "What I built",
+        "bullets": [
+          "ESP32-based motor control firmware in C++.",
+          "Firebase cloud synchronization for remote operation, with REST API integration.",
+          "iOS automation written in Swift.",
+          "A custom CAD-designed, 3D-printed servo mount."
+        ]
+      },
+      {
+        "title": "Integration and validation",
+        "text": "Validated the end-to-end connection between mobile automation, cloud synchronization, embedded logic, and the mechanical actuator. The project combined software development with the practical constraints of mounting and operating a motor."
+      }
+    ],
+    "caption": "System overview illustrating the technologies used in the project."
+  },
+  {
+    "slug": "traffic-light",
+    "title": "Timing meets digital logic.",
+    "name": "FPGA Traffic Light Controller",
+    "category": "Digital design",
+    "kind": "FPGA project",
+    "period": "Digital logic + verification",
+    "status": "Project",
+    "image": "traffic.svg",
+    "alt": "Conceptual traffic signal states for highway and farm road control",
+    "tags": [
+      "Verilog",
+      "Mealy FSM",
+      "Vivado"
+    ],
+    "summary": "A sensor-responsive intersection controller implemented and tested on a Zybo Z7-10 FPGA using a Mealy finite state machine.",
+    "role": "FSM design, behavioral Verilog, simulation, and FPGA implementation",
+    "tools": "Verilog, Vivado, Zybo Z7-10, XDC constraints",
+    "intro": "A traffic controller for a highway–farm road intersection. The design prioritizes highway traffic and responds to a farm-road sensor, using timed states to control the sequence of signals.",
+    "sections": [
+      {
+        "title": "Control behavior",
+        "text": "The controller uses a Mealy finite state machine and counters for timed light transitions. After at least 30 seconds in highway green, a farm-road sensor request can trigger the transition to yellow. When the farm-road sensor clears during farm green, the controller begins the return sequence."
+      },
+      {
+        "title": "Implementation",
+        "bullets": [
+          "Wrote the controller in behavioral Verilog.",
+          "Mapped a pushbutton to the farm-road sensor and LEDs to the two traffic signals.",
+          "Used Vivado XDC constraints to map the logic to physical FPGA pins.",
+          "Simulated the logic and tested the controller on the Zybo Z7-10 development board."
+        ]
+      },
+      {
+        "title": "Design artifact",
+        "text": "The original state sketch documents the controller transitions and timing conditions.",
+        "image": "traffic-fsm.png",
+        "alt": "Original handwritten finite state machine diagram for the traffic controller"
+      }
+    ],
+    "caption": "Illustrated signal sequence. The original state diagram appears below."
+  },
+  {
+    "slug": "motorized-blinds",
+    "title": "A smarter turn of the blinds.",
+    "name": "HomeKit Motorized Blinds",
+    "category": "Embedded systems",
+    "kind": "Personal project",
+    "period": "Hardware + home automation",
+    "status": "Project",
+    "image": "motorized-blinds.jpeg",
+    "alt": "ESP32 breadboard prototype with servo and motor hardware",
+    "tags": [
+      "ESP32",
+      "HomeSpan",
+      "3D printing"
+    ],
+    "summary": "An ESP32 blinds prototype with Apple HomeKit control, motorized actuation, and a custom 3D-printed coupling.",
+    "role": "Firmware adaptation, motor integration, and CAD prototyping",
+    "tools": "ESP32, C++, HomeSpan, motor drivers, CAD / 3D printing",
+    "intro": "A hands-on home automation project connecting an ESP32, motor hardware, and a custom mechanical coupling to the tilt rod of window blinds. HomeSpan provides the connection to Apple HomeKit.",
+    "sections": [
+      {
+        "title": "Hardware and software together",
+        "text": "Adapted HomeSpan's window-covering examples for the blinds mechanism and explored servo and motor-driver approaches. The prototype combines a breadboarded controller with custom parts that connect the motor shaft to the blinds."
+      },
+      {
+        "title": "Mechanical iteration",
+        "text": "Designed and adjusted a 3D-printed connector for the motor and tilt rod. The part makes the interface between the electronics and the existing blinds tangible, and allows the mechanism to be removed or changed during prototyping.",
+        "image": "blinds-mount.png",
+        "alt": "CAD model of the custom motor-to-blind connector"
+      },
+      {
+        "title": "What this demonstrates",
+        "bullets": [
+          "Adapting embedded firmware to a physical mechanism.",
+          "Integrating an ESP32 device into Apple HomeKit through HomeSpan.",
+          "Combining circuit prototyping, motor control, and CAD in a working home automation project."
+        ]
+      }
+    ],
+    "caption": "Original prototype hardware, including the ESP32 and motor components."
+  },
+  {
+    "slug": "home-server",
+    "title": "Old hardware. New purpose.",
+    "name": "Docker Home Server",
+    "category": "Systems",
+    "kind": "Personal project",
+    "period": "Linux + infrastructure",
+    "status": "Project",
+    "image": "home-server.webp",
+    "alt": "Repurposed Dell desktop used as a home server",
+    "tags": [
+      "Linux",
+      "Docker Compose",
+      "Networking"
+    ],
+    "summary": "Repurposed a Dell desktop into a Linux home server for network services, media, and smart home integration.",
+    "role": "Linux setup, container configuration, and home network integration",
+    "tools": "Ubuntu Server, Docker, Docker Compose, Pi-hole, Plex, Homebridge",
+    "intro": "A practical infrastructure project that extends the useful life of an older desktop. Ubuntu Server and Docker provide a common platform for managing home services from one machine.",
+    "sections": [
+      {
+        "title": "The system",
+        "text": "Installed Ubuntu Server on a repurposed Dell desktop and connected it over Ethernet. Configured containerized services with Docker Compose to separate service configuration and simplify ongoing management."
+      },
+      {
+        "title": "Services and integration",
+        "bullets": [
+          "Pi-hole for DNS filtering across the home network.",
+          "Plex for personal media streaming.",
+          "Homebridge for connecting devices to the Apple smart home ecosystem.",
+          "Retro gaming services as part of the original home-server setup."
+        ]
+      },
+      {
+        "title": "Practical outcome",
+        "text": "Brought networking, media, and home automation services together on existing hardware. The project provided experience with Linux administration, container configuration, and service access on a local network."
+      }
+    ],
+    "caption": "The repurposed Dell desktop used for the home-server build."
+  },
+  {
+    "slug": "analog-waveform-circuits",
+    "title": "Making sense of a signal.",
+    "name": "Analog Filters & Oscillators",
+    "category": "Circuits",
+    "kind": "Electronics project",
+    "period": "Circuit design + measurement",
+    "status": "Project",
+    "image": "waveform.svg",
+    "alt": "Illustrative square, triangle, and smooth periodic waveforms",
+    "tags": [
+      "RC filters",
+      "Op-amps",
+      "Oscilloscope"
+    ],
+    "summary": "Built and examined RC filters and op-amp oscillator circuits to explore waveform shaping and signal generation.",
+    "role": "Circuit design, breadboarding, and waveform measurement",
+    "tools": "Resistors, capacitors, op-amps, signal generator, oscilloscope",
+    "intro": "An electronics project investigating how passive filters and active circuits shape periodic signals, through signal conditioning and oscillator experiments.",
+    "sections": [
+      {
+        "title": "Filtering experiments",
+        "text": "Applied RC low-pass filtering to triangle and square wave inputs, including 250 Hz test signals. Compared the output of a single RC stage with cascaded stages to observe how filtering changes waveform shape and amplitude."
+      },
+      {
+        "title": "Active waveform generation",
+        "text": "Built an op-amp oscillator circuit to explore square, triangle, and sinusoidal-like waveforms. Used an oscilloscope to inspect the signals and a signal generator to drive the filtering experiments."
+      },
+      {
+        "title": "Engineering takeaways",
+        "bullets": [
+          "Related component values and cutoff frequency to observed waveform behavior.",
+          "Compared smoothing and attenuation across filtering configurations.",
+          "Connected circuit theory to breadboard implementation and bench measurements."
+        ]
+      }
+    ],
+    "caption": "Illustrative waveforms, not oscilloscope captures or measured results."
+  }
+]

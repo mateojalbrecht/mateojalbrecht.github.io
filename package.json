@@ -1,0 +1,9 @@
+{
+  "name": "mateo-albrecht-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Mateo Albrecht's engineering portfolio. Dependency-free static website for GitHub Pages.",
+  "scripts": {"build": "node scripts/build.mjs", "check": "node scripts/check.mjs", "dev": "node scripts/serve.mjs"},
+  "engines": {"node": ">=18"}
+}
